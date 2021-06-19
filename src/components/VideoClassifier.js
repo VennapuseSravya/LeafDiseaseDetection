@@ -49,7 +49,7 @@ function VideoClassifier() {
   useEffect(() => {
     classifier = ml5.imageClassifier("../../model/model.json", () => {
       navigator.mediaDevices
-        .getUserMedia({ video: {facingMode:{exact:"environment"}}, audio: false })
+        .getUserMedia({ video: "environment", audio: false })
         .then((stream) => {
           videoRef.current.srcObject = stream;
           videoRef.current.play();
